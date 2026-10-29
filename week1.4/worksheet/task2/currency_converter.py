@@ -1,12 +1,11 @@
-
 """
-    Portfolio Task - Week 4
+Portfolio Task - Week 4
 
-    By submitting this code you are declaring that all work in this file,
-    other than any provided template code, was written and developed by
-    you independently.
+By submitting this code you are declaring that all work in this file,
+other than any provided template code, was written and developed by
+you independently.
 
-    Name:
+Name:
 """
 
 def currency_converter(amount, from_currency, to_currency):
@@ -18,9 +17,16 @@ def currency_converter(amount, from_currency, to_currency):
         'INR': {'PHP': 0.69, 'CNY': 0.09, 'GBP': 0.01}
     }
 
-    # your code here
+    if amount < 0:
+        return 0.0
 
-    return None
+    if from_currency == to_currency:
+        result = amount
+    else:
+        rate = conversion_rate[from_currency][to_currency]
+        result = amount * rate
+
+    return round(result, 2)
 
 # Submit only this file currency_converter.py with the completed function.
 
